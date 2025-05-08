@@ -35,12 +35,12 @@ Evaluation:
 
 Evaluated the model using Root Mean Squared Error (RMSE) to measure prediction accuracy.
 
-#OUTPUT : 
-
-![Image](https://github.com/user-attachments/assets/da6a5467-7532-45a2-a18b-2b090cbe560f)
-
 Feature Importance:
 
 Analyzed the importance of each feature in the model.
 
 Visualized feature importance using a bar chart.
+
+#OUTPUT : 
+
+![Image](https://github.com/user-attachments/assets/da6a5467-7532-45a2-a18b-2b090cbe560f)
