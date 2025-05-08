@@ -10,37 +10,58 @@ DOMAIN : DATA ANALYTICS DURATION : 4 WEEKS
 
 # DISCRIPTION :
 
-This repository uses PySpark to predict user engagement (likes) on AI-generated images based on features like generation time, GPU usage, file size, style accuracy, and platform. The analysis was performed on Google Colab, leveraging PySpark's distributed computing capabilities.
+This task demonstrates an analysis and prediction of AI-generated image engagement using the PySpark framework. The goal was to predict the number of likes based on various features and evaluate their importance using a Random Forest Regressor. The dataset used contains information such as generation time, GPU usage, file size, style accuracy score, and platform type.
 
-Key Steps
-Data Loading and Preprocessing:
+Steps Completed
+Data Loading and Preprocessing
 
-Loaded the dataset into a Spark DataFrame.
+Loaded the dataset into a PySpark DataFrame.
 
-Cleaned the data by removing rows with missing values.
+Handled missing values by dropping incomplete rows to ensure data consistency.
 
-Encoded the platform column into numerical values for modeling.
+Encoded the categorical variable platform into numerical values using the StringIndexer.
 
-Feature Engineering:
+Feature Selection and Vectorization
 
-Selected relevant features and assembled them into a single feature vector using PySpark's VectorAssembler.
+Selected relevant features: generation_time, gpu_usage, file_size_kb, style_accuracy_score, and the encoded platform_index.
 
-Model Training:
+Created a feature vector using VectorAssembler for efficient input into the Random Forest model.
 
-Trained a Random Forest Regressor to predict the number of likes.
+Model Training and Evaluation
 
-Used 80% of the data for training and 20% for testing.
+Split the dataset into training (80%) and testing (20%) sets to train the model and validate its performance.
 
-Evaluation:
+Trained a Random Forest Regressor with 100 trees to predict the number of likes.
 
-Evaluated the model using Root Mean Squared Error (RMSE) to measure prediction accuracy.
+Evaluated the model using Root Mean Squared Error (RMSE), which was 1529.46.
+
+Feature Importance Analysis
+
+Extracted and visualized the importance of each feature in predicting engagement.
+
+Found that style_accuracy_score and generation_time were the most significant predictors.
+
+Visualization of Results
+
+Plotted feature importance using Matplotlib to provide actionable insights on which attributes most influence engagement.
+
+Key Insights from Output
+RMSE Value: The model’s RMSE indicates the error margin for predictions, useful for further tuning.
 
 Feature Importance:
 
-Analyzed the importance of each feature in the model.
+style_accuracy_score and generation_time are crucial for predicting likes, providing potential areas to optimize for better engagement.
 
-Visualized feature importance using a bar chart.
+gpu_usage and file_size_kb hold moderate influence, while platform_index has comparatively less impact.
 
+Tools and Libraries
+PySpark for scalable data processing and machine learning.
+
+Matplotlib for feature importance visualization.
+
+Google Colab for interactive coding and visualization.
+
+This task highlights the application of PySpark in big data analysis, focusing on interpretability and actionable insights. The interactive analysis was concluded with a clear visualization of feature importance to guide decisions.
 #OUTPUT : 
 
 ![Image](https://github.com/user-attachments/assets/da6a5467-7532-45a2-a18b-2b090cbe560f)
